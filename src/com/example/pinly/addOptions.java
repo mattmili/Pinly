@@ -2,6 +2,8 @@ package com.example.pinly;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 
 import android.net.Uri;
@@ -31,7 +33,8 @@ public class addOptions extends Activity implements OnClickListener {
 
     private File createImageFile() throws IOException {
         // Create an image file name
-        String imageFileName = "JPEG_" + "PINLY" + "_";
+    	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + "PINLY" + "_"+timeStamp;
         File storageDir = Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
