@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 
 public class addOptions extends Activity implements OnClickListener {
 
@@ -23,6 +24,24 @@ public class addOptions extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options_activity);
+        
+        CheckBox cb1 = (CheckBox) findViewById(R.id.checkBox1);
+        cb1.setOnClickListener(this);
+        
+        CheckBox cb2 = (CheckBox) findViewById(R.id.checkBox2);
+        cb2.setOnClickListener(this);
+        
+        CheckBox cb3 = (CheckBox) findViewById(R.id.checkBox3);
+        cb3.setOnClickListener(this);
+        
+        CheckBox cb4 = (CheckBox) findViewById(R.id.checkBox4);
+        cb4.setOnClickListener(this);
+        
+        CheckBox cb5 = (CheckBox) findViewById(R.id.checkBox5);
+        cb5.setOnClickListener(this);
+        
+        CheckBox cb6 = (CheckBox) findViewById(R.id.checkBox6);
+        cb6.setOnClickListener(this);
         
         Button op = (Button) findViewById(R.id.opB1);
         op.setOnClickListener(this);
@@ -77,6 +96,18 @@ public class addOptions extends Activity implements OnClickListener {
 		case R.id.opB1:
 			dispatchTakePictureIntent();
 		   
+			break;
+		case R.id.checkBox1:
+			break;
+		case R.id.checkBox2:
+			break;
+		case R.id.checkBox3:
+			break;
+		case R.id.checkBox4:
+			break;
+		case R.id.checkBox5:
+			break;
+		case R.id.checkBox6:
 			break;
 		
 		}
