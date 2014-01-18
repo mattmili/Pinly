@@ -34,6 +34,7 @@ public final class R {
         public static final int main_button1=0x7f020006;
         public static final int main_title=0x7f020007;
         public static final int snap=0x7f020008;
+        public static final int test=0x7f020009;
     }
     public static final class id {
         public static final int about=0x7f090007;

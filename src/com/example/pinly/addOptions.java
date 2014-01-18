@@ -28,6 +28,7 @@ public class addOptions extends Activity implements OnClickListener {
 	String rain;
 	
 	String fullQ;
+	String imageFileName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +54,8 @@ public class addOptions extends Activity implements OnClickListener {
         
         Button op = (Button) findViewById(R.id.opB1);
         op.setOnClickListener(this);
+        
+        //imageFileName is the name of the file
     }
 
 
@@ -61,7 +64,7 @@ public class addOptions extends Activity implements OnClickListener {
     private File createImageFile() throws IOException {
         // Create an image file name
     	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + "PINLY" + "_"+timeStamp;
+        imageFileName = "JPEG_" + "PINLY" + "_"+timeStamp;
         File storageDir = Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
