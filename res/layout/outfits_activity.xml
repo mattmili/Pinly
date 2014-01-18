@@ -4,6 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:background="@color/main_back">
-    
 
+    <Button
+        android:id="@+id/random"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/random"
+        android:textSize="28sp" />
+    
 </LinearLayout>

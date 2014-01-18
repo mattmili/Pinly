@@ -8,5 +8,6 @@
     <string name="add">Add Clothing Options</string>
     <string name="about">About Us</string>
     <string name="remove">Remove Clothing Options</string>
+    <string name="random">Generate Outfit</string>
 
 </resources>
