@@ -31,6 +31,7 @@ public final class R {
         public static final int main_button=0x7f020003;
         public static final int main_button1=0x7f020004;
         public static final int main_title=0x7f020005;
+        public static final int snap=0x7f020006;
     }
     public static final class id {
         public static final int about=0x7f090007;
@@ -72,6 +73,7 @@ public final class R {
         public static final int outfit=0x7f060003;
         public static final int random=0x7f060007;
         public static final int remove=0x7f060006;
+        public static final int where=0x7f060008;
     }
     public static final class style {
         /** 
