@@ -19,11 +19,16 @@
         android:gravity="center"
         >
 
-        <TextView
-            android:id="@+id/textView1"
+        <ImageView
+            android:id="@+id/imageView1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TITLE GOES HERE" />
+            android:layout_height="150dp"
+            android:src="@drawable/main_title" />
+          <View
+	            android:layout_width="fill_parent"
+				android:layout_height="2dip"
+				android:background="#FFFFFFFF" />
+
 		<LinearLayout
 		    android:id="@+id/button_main_lay" 
 		    android:layout_height="wrap_content"
