@@ -32,7 +32,9 @@
     	<activity 
     	     android:name = "com.example.pinly.outfits">
     	</activity>
-<<<<<<< HEAD
+    	<activity 
+    	     android:name = "com.example.pinly.removeOptions">
+    	</activity>
     	<activity
     		android:name = "com.example.pinly.ImagesDB">
     	</activity>
@@ -44,10 +46,6 @@
     	</activity>
     	<activity
     		android:name = "com.example.pinly.RmvFromDB">
-=======
-    	<activity 
-    	     android:name = "com.example.pinly.removeOptions">
->>>>>>> 2fb302d45bcddb0871d4a732918f01d5fb106f29
     	</activity>
     </application>
 
