@@ -9,5 +9,6 @@
     <string name="about">About Us</string>
     <string name="remove">Remove Clothing Options</string>
     <string name="random">Generate Outfit</string>
+    <string name="where">When can you wear this?</string>
 
 </resources>

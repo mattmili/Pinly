@@ -32,6 +32,9 @@
     	<activity 
     	     android:name = "com.example.pinly.outfits">
     	</activity>
+    	<activity 
+    	     android:name = "com.example.pinly.removeOptions">
+    	</activity>
     </application>
 
 </manifest>
