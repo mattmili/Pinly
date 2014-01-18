@@ -134,7 +134,6 @@
 			    android:layout_height="77dp"
 			    android:src="@drawable/cam" />
 
-"
 	        <Button
 	            android:id="@+id/opB1"
 	            android:textSize="20sp"
