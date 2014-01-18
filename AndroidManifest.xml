@@ -32,6 +32,18 @@
     	<activity 
     	     android:name = "com.example.pinly.outfits">
     	</activity>
+    	<activity
+    		android:name = "com.example.pinly.ImagesDB">
+    	</activity>
+    	<activity
+    		android:name = "com.example.pinly.AddToDB">
+    	</activity>
+    	<activity
+    		android:name = "com.example.pinly.QueryDB">
+    	</activity>
+    	<activity
+    		android:name = "com.example.pinly.RmvFromDB">
+    	</activity>
     </application>
 
 </manifest>

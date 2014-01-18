@@ -23,9 +23,11 @@
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
-            android:src="@drawable/main_title"
             android:paddingBottom="20dp"
-            android:paddingTop="15dp" />
+            android:paddingTop="15dp"
+            android:src="@drawable/main_title"
+            tools:ignore="ContentDescription" />
+
           <View
 	            android:layout_width="fill_parent"
 				android:layout_height="2dip"
