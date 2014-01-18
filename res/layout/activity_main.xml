@@ -23,7 +23,9 @@
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
-            android:src="@drawable/main_title" />
+            android:src="@drawable/main_title"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp" />
           <View
 	            android:layout_width="fill_parent"
 				android:layout_height="2dip"
@@ -33,16 +35,20 @@
 		    android:id="@+id/button_main_lay" 
 		    android:layout_height="wrap_content"
 		    android:layout_width="fill_parent"
-		    android:orientation="vertical">
+		    android:orientation="vertical"
+		    android:gravity="left">
 		    <Button
 	            android:id="@+id/outfit"
-	            android:layout_width="wrap_content"
+	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:text="@string/outfit"
-	            android:background="@null" 
+	            android:textSize="28sp"
+	            android:background="@drawable/highlight" 
+	            android:gravity="left"
 	            android:paddingLeft="15dp"
 	            android:paddingRight="15dp"
-	            android:layout_margin="20dp"/>
+	            android:layout_margin="20dp"
+	            />
 	        <View
 	            android:layout_width="fill_parent"
 				android:layout_height="2dip"
@@ -50,10 +56,12 @@
 	
 	        <Button
 	            android:id="@+id/add"
-	            android:layout_width="wrap_content"
+	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
+	            android:gravity="left"
 	            android:text="@string/add"
-	            android:background="@null" 
+	            android:textSize="28sp"
+	            android:background="@drawable/highlight" 
 	            android:paddingLeft="15dp"
 	            android:paddingRight="15dp"
 	            android:layout_margin="20dp" />
@@ -64,10 +72,12 @@
 	        
 	        <Button
 	            android:id="@+id/remove"
-	            android:layout_width="wrap_content"
+	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:text="@string/remove"
-	            android:background="@null" 
+	            android:gravity="left"
+	            android:textSize="28sp"
+	            android:background="@drawable/highlight" 
 	            android:paddingLeft="15dp"
 	            android:paddingRight="15dp"
 	            android:layout_margin="20dp" />
@@ -78,10 +88,12 @@
 	
 	        <Button
 	            android:id="@+id/about"
-	            android:layout_width="wrap_content"
+	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:text="@string/about" 
-	            android:background="@null" 
+	            android:textSize="28sp"
+	            android:background="@drawable/highlight"
+	            android:gravity="left" 
 	            android:paddingLeft="15dp"
 	            android:paddingRight="15dp"
 	            android:layout_margin="20dp"/>

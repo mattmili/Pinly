@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="main_back">#8FEAF1</color>
+    <color name="main_high">#C7F4F8</color>
     
 </resources>
