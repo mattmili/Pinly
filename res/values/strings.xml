@@ -4,5 +4,8 @@
     <string name="app_name">pinly</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="outfit">Find An Outfit</string>
+    <string name="edit">Add/Remove Clothing</string>
+    <string name="about">About Us</string>
 
 </resources>

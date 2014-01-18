@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,11 +6,55 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
-
-    <TextView
-        android:layout_width="wrap_content"
+    android:id="@+id/main_scroll"
+    tools:context=".MainActivity"
+    android:background="@color/main_back" >
+	
+    <LinearLayout
+        android:id="@+id/main_lin"
+        android:background="@null"
+        android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        >
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TITLE GOES HERE" />
+
+        <Button
+            android:id="@+id/outfit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/outfit"
+            android:background="@drawable/main_button" 
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_margin="20dp"/>
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit"
+            android:background="@drawable/main_button" 
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_margin="20dp" />
+
+        <Button
+            android:id="@+id/about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about" 
+            android:background="@drawable/main_button" 
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_margin="20dp"/>
+        
+        </LinearLayout>
+
+</ScrollView>
