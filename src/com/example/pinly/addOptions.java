@@ -19,7 +19,12 @@ import android.widget.Button;
 import android.widget.CheckBox;
 
 public class addOptions extends Activity implements OnClickListener {
-
+	String hot;
+	String cold;
+	String mild;
+	String snow;
+	String sun;
+	String rain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,22 +97,35 @@ public class addOptions extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		hot = "no";
+		cold = "no";
+		mild = "no";
+		snow = "no";
+		sun = "no";
+		rain = "no";
 		switch(v.getId()){
+		
 		case R.id.opB1:
 			dispatchTakePictureIntent();
 		   
 			break;
 		case R.id.checkBox1:
+			hot = "yes";
 			break;
 		case R.id.checkBox2:
+			cold = "yes";
 			break;
 		case R.id.checkBox3:
+			mild = "yes";
 			break;
 		case R.id.checkBox4:
+			snow = "yes";
 			break;
 		case R.id.checkBox5:
+			sun = "yes";
 			break;
 		case R.id.checkBox6:
+			rain = "yes";
 			break;
 		
 		}
