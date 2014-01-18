@@ -1,6 +1,8 @@
 package com.example.pinly;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -9,9 +11,9 @@ public class ImagesDB extends SQLiteOpenHelper{
 	public static final String TABLE_IMAGES="images";
 	public static final String LOCAL_NAME = "Local_Name";
 	public static final String FILE_NAME = "File_Name";
-	public static final String HOT = "Hot_Weather";
-	public static final String COLD = "Cold_Weather";
-	public static final String WARM = "Warm_Weather";
+	public static final String HOT = "Hot";
+	public static final String COLD = "Cold";
+	public static final String WARM = "Warm";
 	public static final String RAIN = "Waterproof";
 	
 	private static final String DATABASE_NAME="images.db";
@@ -41,4 +43,27 @@ public class ImagesDB extends SQLiteOpenHelper{
 	    db.execSQL("DROP TABLE IF EXISTS " + TABLE_IMAGES);
 	    onCreate(db);
 	}
+	
+	public void addToDB (String inputStream){
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		ContentValues values = new ContentValues();
+		values.put(FILE_NAME, inputStream);
+		values.put(LOCAL_NAME, inputStream);
+		values.put(HOT, inputStream);
+		values.put(COLD, inputStream);
+		values.put(WARM, inputStream);
+		values.put(RAIN, inputStream);
+		db.insert(TABLE_IMAGES, null, values);
+		
+		db.close();	
+	}
+	
+	/*public Cursor queryDB (String inputStream[]){
+		Cursor cursor = getReadableDatabase().
+				query(DATABASE_NAME,null,
+						"where Hot=? Cold=? warm=? Waterproof=?",
+						{"true","true","false","true"},null,null,null);
+		return cursor;
+	}*/
 }
