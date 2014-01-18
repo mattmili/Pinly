@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 public class addOptions extends Activity implements OnClickListener {
 	String hot;
@@ -25,6 +26,8 @@ public class addOptions extends Activity implements OnClickListener {
 	String snow;
 	String sun;
 	String rain;
+	
+	String fullQ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,6 +132,6 @@ public class addOptions extends Activity implements OnClickListener {
 			break;
 		
 		}
-		
+		fullQ = hot+","+cold+","+mild+","+snow+","+sun+","+","+rain;
 	}
 }
