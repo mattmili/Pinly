@@ -14,19 +14,36 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingTop="30dp"
-        android:paddingBottom="15dp"
-        android:textSize="28sp"
+        android:paddingBottom="5dp"
+        android:textSize="37sp"
         android:textColor="#000000"
         android:text="Remove Clothing"
         />
+    	<LinearLayout
+    	    android:layout_height="wrap_content"
+    	    android:layout_width="fill_parent"
+    	    android:paddingRight="15dp"
+    	    android:paddingLeft="15dp">
+              <View
+	            android:layout_width="fill_parent"
+				android:layout_height="2dip"
+				android:background="#FFFFFFFF" />
+              </LinearLayout>
+              <View
+	            android:layout_width="fill_parent"
+				android:layout_height="18dip"
+				android:background="@null" />
 	<ScrollView
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
 	    android:background="@color/main_high"
+	    android:paddingLeft="10dp"
+	    android:paddingRight="10dp"
 	    >
 	    <LinearLayout
 	        android:layout_width="fill_parent"
 	        android:layout_height="fill_parent"
+	        android:paddingTop="10dp"
 	        android:orientation="vertical"
 	        android:gravity="center_horizontal"
 	        android:id="@+id/removeView"
