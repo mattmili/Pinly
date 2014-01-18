@@ -17,6 +17,9 @@ public class MainActivity extends Activity implements OnClickListener {
         
         Button mainB1 = (Button) findViewById(R.id.add);
         mainB1.setOnClickListener(this);
+        
+        Button mainB2 = (Button) findViewById(R.id.outfit);
+        mainB2.setOnClickListener(this);
     }
 
 
@@ -36,6 +39,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			Intent i1 = new Intent(v.getContext(), addOptions.class);
 			startActivityForResult(i1, 0);
 			break;
+		case R.id.outfit:
+			Intent i2 = new Intent(v.getContext(), outfits.class);
+			startActivityForResult(i2, 0);
 		}
 	}
     
