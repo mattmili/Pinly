@@ -24,37 +24,63 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TITLE GOES HERE" />
-
-        <Button
-            android:id="@+id/outfit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/outfit"
-            android:background="@drawable/main_button" 
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:layout_margin="20dp"/>
-
-        <Button
-            android:id="@+id/edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/edit"
-            android:background="@drawable/main_button" 
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:layout_margin="20dp" />
-
-        <Button
-            android:id="@+id/about"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/about" 
-            android:background="@drawable/main_button" 
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:layout_margin="20dp"/>
-        
+		<LinearLayout
+		    android:id="@+id/button_main_lay" 
+		    android:layout_height="wrap_content"
+		    android:layout_width="fill_parent"
+		    android:orientation="vertical">
+		    <Button
+	            android:id="@+id/outfit"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/outfit"
+	            android:background="@null" 
+	            android:paddingLeft="15dp"
+	            android:paddingRight="15dp"
+	            android:layout_margin="20dp"/>
+	        <View
+	            android:layout_width="fill_parent"
+				android:layout_height="2dip"
+				android:background="#FFFFFFFF" />
+	
+	        <Button
+	            android:id="@+id/add"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/add"
+	            android:background="@null" 
+	            android:paddingLeft="15dp"
+	            android:paddingRight="15dp"
+	            android:layout_margin="20dp" />
+	        <View
+	            android:layout_width="fill_parent"
+				android:layout_height="2dip"
+				android:background="#FFFFFFFF" />
+	        
+	        <Button
+	            android:id="@+id/remove"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/remove"
+	            android:background="@null" 
+	            android:paddingLeft="15dp"
+	            android:paddingRight="15dp"
+	            android:layout_margin="20dp" />
+	        <View
+	            android:layout_width="fill_parent"
+				android:layout_height="2dip"
+				android:background="#FFFFFFFF" />
+	
+	        <Button
+	            android:id="@+id/about"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/about" 
+	            android:background="@null" 
+	            android:paddingLeft="15dp"
+	            android:paddingRight="15dp"
+	            android:layout_margin="20dp"/>
+        </LinearLayout>
         </LinearLayout>
 
 </ScrollView>
