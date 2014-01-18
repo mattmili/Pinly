@@ -20,6 +20,9 @@ public class MainActivity extends Activity implements OnClickListener {
         
         Button mainB2 = (Button) findViewById(R.id.outfit);
         mainB2.setOnClickListener(this);
+        
+        Button mainB3 = (Button) findViewById(R.id.remove);
+        mainB3.setOnClickListener(this);
     }
 
 
@@ -42,6 +45,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.outfit:
 			Intent i2 = new Intent(v.getContext(), outfits.class);
 			startActivityForResult(i2, 0);
+		case R.id.remove:
+			Intent i3 = new Intent(v.getContext(), removeOptions.class);
+			startActivityForResult(i3, 0);
 		}
 	}
     
