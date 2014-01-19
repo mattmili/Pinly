@@ -2,6 +2,7 @@ package com.example.pinly;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class DB_Operator {
@@ -31,11 +32,14 @@ public class DB_Operator {
 		db.close();	
 	}
 	
-	/*public Cursor queryDB (String inputStream[]){
-		Cursor cursor = getReadableDatabase().
-				query(DATABASE_NAME,null,
-						"where Hot=? Cold=? warm=? Waterproof=?",
-						{"true","true","false","true"},null,null,null);
+	public Cursor queryDB (String inputStream){
+		db = dbHelper.getWritableDatabase();
+		String[] columnNames = {"Hot", "Cold", "Mild", "Rain", "Sun", "Snow"};
+		String[] parse = inputStream.split(",");
+		Cursor cursor = db.query(
+			ImagesDB.TABLE_IMAGES, columnNames,
+			"where Hot=? Cold=? warm=? Waterproof=?",
+			parse,null,null,null);
 		return cursor;
-	}*/
+	}
 }
