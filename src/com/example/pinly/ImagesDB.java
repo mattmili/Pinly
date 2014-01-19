@@ -16,16 +16,16 @@ public class ImagesDB extends SQLiteOpenHelper{
 	public static final String SNOW = "Snow";
 	public static final String SUN = "Sun";
 	public static final String RAIN = "Waterproof";
-	
+	public static final String TYPE = "Type";
 	private static final String DATABASE_NAME="images.db";
 	private static final int DATABASE_VERSION = 1;
 	
 	private static final String DATABASE_CREATE = "create table "
-			+ TABLE_IMAGES + "(" + LOCAL_NAME
-			+ " text not null, " + FILE_NAME
-			+ " text not null, " + HOT + " text, " + COLD
-			+ " text, " + MILD + " text "
-			+ SNOW + " snow " + RAIN + " text)";
+			+ TABLE_IMAGES + "(" + FILE_NAME
+			+ " text not null, " + HOT + " text not null, " + COLD
+			+ " text not null, " + MILD + " text not null, "
+			+ SNOW + " text not null, " + RAIN + " text not null, "+
+			TYPE + " text not null)";
 	
 	public ImagesDB (Context context){
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);

@@ -27,6 +27,7 @@ public class DB_Operator {
 		values.put(ImagesDB.SNOW, parse[3]);
 		values.put(ImagesDB.SUN, parse[4]);
 		values.put(ImagesDB.RAIN, parse[5]);
+		values.put(ImagesDB.TYPE, parse[7]);
 		db.insert(ImagesDB.TABLE_IMAGES, null, values);
 		
 		db.close();	

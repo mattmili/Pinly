@@ -88,7 +88,7 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
             ".jpg",         /* suffix */
             storageDir      /* directory */
         );
-        
+        fullQ = fullQ+imageFileName+".jpg"+type;
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = "file:" + image.getAbsolutePath();
         return image;
