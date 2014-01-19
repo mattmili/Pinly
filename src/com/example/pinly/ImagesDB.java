@@ -9,9 +9,12 @@ public class ImagesDB extends SQLiteOpenHelper{
 	public static final String TABLE_IMAGES="images";
 	public static final String LOCAL_NAME = "Local_Name";
 	public static final String FILE_NAME = "File_Name";
-	public static final String HOT = "Hot_Weather";
-	public static final String COLD = "Cold_Weather";
-	public static final String WARM = "Warm_Weather";
+
+	public static final String HOT = "Hot";
+	public static final String COLD = "Cold";
+	public static final String MILD = "Mild";
+	public static final String SNOW = "Snow";
+	public static final String SUN = "Sun";
 	public static final String RAIN = "Waterproof";
 	
 	private static final String DATABASE_NAME="images.db";
@@ -20,9 +23,9 @@ public class ImagesDB extends SQLiteOpenHelper{
 	private static final String DATABASE_CREATE = "create table "
 			+ TABLE_IMAGES + "(" + LOCAL_NAME
 			+ " text not null, " + FILE_NAME
-			+ " text not null, " + HOT + " INTEGER, " + COLD
-			+ " INTEGER, " + WARM + " INTEGER "
-			+ RAIN + " INTEGER)";
+			+ " text not null, " + HOT + " text, " + COLD
+			+ " text, " + MILD + " text "
+			+ SNOW + " snow " + RAIN + " text)";
 	
 	public ImagesDB (Context context){
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
