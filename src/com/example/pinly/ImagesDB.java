@@ -69,7 +69,7 @@ public class ImagesDB extends SQLiteOpenHelper{
 		String[] parse = inputStream.split(",");
 		Cursor cursor = db.query(
 			ImagesDB.TABLE_IMAGES, columnNames,
-			"where Hot=? Cold=? Mild=? Rain=?",
+			"Hot=? AND Cold=? AND Mild=? AND Rain=?",
 			parse,null,null,null);
 		return cursor;
 	}
