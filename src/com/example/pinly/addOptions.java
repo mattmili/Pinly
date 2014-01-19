@@ -93,7 +93,7 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
             storageDir      /* directory */
         );
         // Save a file: path for use with ACTION_VIEW intents
-        //mCurrentPhotoPath = "file:" + image.getAbsolutePath();
+        imageFileName = "file:" + image.getAbsolutePath();
         return image;
     }
     
@@ -115,6 +115,8 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
                         Uri.fromFile(photoFile));
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+                fullQ=fullQ+","+imageFileName;
+                db.addToDB(fullQ);
             }
         }
     }
@@ -157,7 +159,7 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
 				break;
 			}
 		
-		fullQ = hot+","+cold+","+mild+","+snow+","+sun+","+","+rain;
+		fullQ = hot+","+cold+","+mild+","+snow+","+sun+","+rain;
 	}
 
 	@Override

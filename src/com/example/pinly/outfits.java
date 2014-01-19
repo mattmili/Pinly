@@ -16,6 +16,7 @@ import android.view.View.OnClickListener;
 
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 public class outfits extends Activity implements OnClickListener {
@@ -44,10 +45,13 @@ public class outfits extends Activity implements OnClickListener {
      * These methods find the photo for the frames based on the path
      * */
     public void findTopFrame(String path){
+    	
         ImageView image = (ImageView) findViewById(R.id.top);
         FileInputStream in;
         BufferedInputStream buf;
+        
         try {
+        	
             in = new FileInputStream(path);
             buf = new BufferedInputStream(in);
             Bitmap bMap = BitmapFactory.decodeStream(buf);
@@ -107,30 +111,38 @@ public class outfits extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
-		String find = HOT+","+COLD+","+MILD+","+RAIN+","+SNOW+","+SUN;
+		String find = HOT+","+COLD+","+MILD+","+SNOW+","+SUN+","+RAIN;
+		
 		// TODO Auto-generated method stub
 		switch(arg0.getId()){
 		case R.id.random:
 			Random rand = new Random();
 			//Generate random top:
 			Cursor cursor0 = db.queryDB(find+",top");
-			int item0 = rand.nextInt()*cursor0.getCount()-1;
+			Toast.makeText(getApplicationContext(), 
+	                "past curs", Toast.LENGTH_LONG).show();
+			if(cursor0.getCount()!=0){
+			int item0 = rand.nextInt(cursor0.getCount()-1);
+			
 			cursor0.moveToPosition(item0);
-			String path0 = getString(6);
+			String path0 = cursor0.getString(6);
 			findTopFrame(path0);
+			}
 			
 			//Generate random bottoms:
 			Cursor cursor1 = db.queryDB(find+",bottom");
-			int item1 = rand.nextInt()*cursor1.getCount()-1;
+			int item1 = rand.nextInt()*cursor1.getCount();
+			if(cursor0.getCount()==0) break;
 			cursor1.moveToPosition(item1);
-			String path1 = getString(6);
+			String path1 = cursor1.getString(6);
 			findMiddleFrame(path1);
 			
 			//Generate random shoes:
 			Cursor cursor2 = db.queryDB(find+",shoes");
-			int item2 = rand.nextInt()*cursor2.getCount()-1;
+			int item2 = rand.nextInt()*cursor2.getCount();
+			if(cursor0.getCount()==0) break;
 			cursor2.moveToPosition(item2);
-			String path2 = getString(6);
+			String path2 = cursor2.getString(6);
 			findBottomFrame(path2);
 			
 			break;

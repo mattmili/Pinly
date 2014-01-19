@@ -20,7 +20,7 @@ public class ImagesDB extends SQLiteOpenHelper{
 	public static final String RAIN = "Rain";
 	public static final String TYPE = "Type";
 	private static final String DATABASE_NAME="images.db";
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 2;
 	
 	
 	
@@ -30,12 +30,7 @@ public class ImagesDB extends SQLiteOpenHelper{
 	
 	@Override
 	public void onCreate(SQLiteDatabase database){
-		String DATABASE_CREATE = "CREATE TABLE "
-				+ TABLE_IMAGES + "(" + FILE_NAME
-				+ " TEXT, " + HOT + " TEXT, " + COLD
-				+ " TEXT, " + MILD + " TEXT, "
-				+ SNOW + " TEXT, " + RAIN + " TEXT, "+
-				TYPE + " TEXT)";
+		String DATABASE_CREATE = "CREATE TABLE if not exists "+ TABLE_IMAGES + "(" + FILE_NAME+ " TEXT, " +HOT + " TEXT, " + COLD+ " TEXT, " + MILD + " TEXT, "+ SNOW + " TEXT, "+ SUN + " TEXT, " + RAIN + " TEXT, "+ TYPE + " TEXT);";
 		database.execSQL(DATABASE_CREATE);
 	}
 	
@@ -51,26 +46,27 @@ public class ImagesDB extends SQLiteOpenHelper{
 		String[] parse = inputStream.split(",");
 		
 		ContentValues values = new ContentValues();
-		values.put(ImagesDB.FILE_NAME, parse[6]);
-		values.put(ImagesDB.HOT, parse[0]);
-		values.put(ImagesDB.COLD, parse[1]);
-		values.put(ImagesDB.MILD, parse[2]);
-		values.put(ImagesDB.SNOW, parse[3]);
-		values.put(ImagesDB.SUN, parse[4]);
-		values.put(ImagesDB.RAIN, parse[5]);
-		values.put(ImagesDB.TYPE, parse[7]);
+		values.put(FILE_NAME, parse[6]);
+		values.put(HOT, parse[0]);
+		values.put(COLD, parse[1]);
+		values.put(MILD, parse[2]);
+		values.put(SNOW, parse[3]);
+		values.put(SUN, parse[4]);
+		values.put(RAIN, parse[5]);
+		values.put(TYPE, parse[7]);
 		db.insert(TABLE_IMAGES, null, values);
 		
 		db.close();	
 	}
 	public Cursor queryDB (String inputStream){
 		SQLiteDatabase db = this.getReadableDatabase();
-		String[] columnNames = {"Hot", "Cold", "Mild", "Rain", "Sun", "Snow"};
+		String[] columnNames = {"Hot", "Cold", "Mild","Snow","Sun","Rain","Type"};
 		String[] parse = inputStream.split(",");
 		Cursor cursor = db.query(
-			ImagesDB.TABLE_IMAGES, columnNames,
-			"Hot=? AND Cold=? AND Mild=? AND Rain=?",
+			TABLE_IMAGES, columnNames,
+			"Hot=? AND Cold=? AND Mild=? AND Snow=? AND Sun=? AND Rain=? AND Type=?",
 			parse,null,null,null);
 		return cursor;
 	}
 }
+ 
