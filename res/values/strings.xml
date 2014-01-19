@@ -10,5 +10,10 @@
     <string name="remove">Remove Clothing Options</string>
     <string name="random">Generate Outfit</string>
     <string name="where">When can you wear this?</string>
+    <string-array name="types">
+        <item>Top</item>
+        <item>Bottom</item>
+        <item>Shoes</item>
+    </string-array>
 
 </resources>
