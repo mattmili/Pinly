@@ -120,10 +120,11 @@ public class outfits extends Activity implements OnClickListener {
 			//Generate random top:
 			Cursor cursor0 = db.queryDB(find+",top");
 			Toast.makeText(getApplicationContext(), 
-	                "past curs", Toast.LENGTH_LONG).show();
+	                cursor0.getString(0), Toast.LENGTH_LONG).show();
 			if(cursor0.getCount()!=0){
 			int item0 = rand.nextInt(cursor0.getCount()-1);
-			
+			Toast.makeText(getApplicationContext(), 
+	                "into curs", Toast.LENGTH_LONG).show();
 			cursor0.moveToPosition(item0);
 			String path0 = cursor0.getString(6);
 			findTopFrame(path0);

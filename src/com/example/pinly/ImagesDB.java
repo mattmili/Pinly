@@ -44,7 +44,7 @@ public class ImagesDB extends SQLiteOpenHelper{
 		SQLiteDatabase db = this.getWritableDatabase();
 		
 		String[] parse = inputStream.split(",");
-		
+		Log.e("Okay...");
 		ContentValues values = new ContentValues();
 		values.put(FILE_NAME, parse[6]);
 		values.put(HOT, parse[0]);
@@ -62,6 +62,7 @@ public class ImagesDB extends SQLiteOpenHelper{
 		SQLiteDatabase db = this.getReadableDatabase();
 		String[] columnNames = {"Hot", "Cold", "Mild","Snow","Sun","Rain","Type"};
 		String[] parse = inputStream.split(",");
+		
 		Cursor cursor = db.query(
 			TABLE_IMAGES, columnNames,
 			"Hot=? AND Cold=? AND Mild=? AND Snow=? AND Sun=? AND Rain=? AND Type=?",

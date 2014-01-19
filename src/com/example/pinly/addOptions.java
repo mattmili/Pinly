@@ -115,7 +115,7 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
                         Uri.fromFile(photoFile));
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
-                fullQ=fullQ+","+imageFileName;
+                fullQ=fullQ+","+imageFileName+","+type;
                 db.addToDB(fullQ);
             }
         }
