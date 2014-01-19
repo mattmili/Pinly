@@ -92,10 +92,8 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
             ".jpg",         /* suffix */
             storageDir      /* directory */
         );
-        fullQ = fullQ+","+image.toString();
-        db.addToDB(fullQ);
         // Save a file: path for use with ACTION_VIEW intents
-        mCurrentPhotoPath = "file:" + image.getAbsolutePath();
+        //mCurrentPhotoPath = "file:" + image.getAbsolutePath();
         return image;
     }
     
@@ -130,32 +128,35 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
 		snow = "false";
 		sun = "false";
 		rain = "false";
-		switch(v.getId()){
+		if(v==null)
+			System.out.println("ERRRORRR!!!!");
+		System.out.println("not error?");
+			switch(v.getId()){
+			
+			case R.id.opB1:
+				dispatchTakePictureIntent();
+			   
+				break;
+			case R.id.checkBox1:
+				hot = "true";
+				break;
+			case R.id.checkBox2:
+				cold = "true";
+				break;
+			case R.id.checkBox3:
+				mild = "true";
+				break;
+			case R.id.checkBox4:
+				snow = "true";
+				break;
+			case R.id.checkBox5:
+				sun = "true";
+				break;
+			case R.id.checkBox6:
+				rain = "true";
+				break;
+			}
 		
-		case R.id.opB1:
-			dispatchTakePictureIntent();
-		   
-			break;
-		case R.id.checkBox1:
-			hot = "true";
-			break;
-		case R.id.checkBox2:
-			cold = "true";
-			break;
-		case R.id.checkBox3:
-			mild = "true";
-			break;
-		case R.id.checkBox4:
-			snow = "true";
-			break;
-		case R.id.checkBox5:
-			sun = "true";
-			break;
-		case R.id.checkBox6:
-			rain = "true";
-			break;
-		
-		}
 		fullQ = hot+","+cold+","+mild+","+snow+","+sun+","+","+rain;
 	}
 
