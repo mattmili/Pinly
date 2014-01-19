@@ -33,7 +33,7 @@ public class DB_Operator {
 		db.close();	
 	}
 	
-	public Cursor queryDB (String inputStream){
+	public static Cursor queryDB (String inputStream){
 		db = dbHelper.getWritableDatabase();
 		String[] columnNames = {"Hot", "Cold", "Mild", "Rain", "Sun", "Snow"};
 		String[] parse = inputStream.split(",");

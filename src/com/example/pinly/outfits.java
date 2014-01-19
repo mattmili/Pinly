@@ -3,9 +3,11 @@ package com.example.pinly;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+import java.util.Random;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
@@ -17,7 +19,14 @@ import android.widget.ImageView;
 
 
 public class outfits extends Activity implements OnClickListener {
-
+	
+	String HOT;
+	String COLD;
+	String MILD;
+	String SNOW;
+	String RAIN;
+	String SUN;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,12 +104,32 @@ public class outfits extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
+		String find = HOT+","+COLD+","+MILD+","+RAIN+","+SNOW+","+SUN;
 		// TODO Auto-generated method stub
 		switch(arg0.getId()){
 		case R.id.random:
-			//findTopFrame(path0);
-			//findMiddleFrame(path1);
-			//findBottomFrame(path2);
+			Random rand = new Random();
+			//Generate random top:
+			Cursor cursor0 = DB_Operator.queryDB(find+",top");
+			int item0 = rand.nextInt()*cursor0.getCount()-1;
+			cursor0.moveToPosition(item0);
+			String path0 = getString(6);
+			findTopFrame(path0);
+			
+			//Generate random bottoms:
+			Cursor cursor1 = DB_Operator.queryDB(find+",bottom");
+			int item1 = rand.nextInt()*cursor1.getCount()-1;
+			cursor1.moveToPosition(item1);
+			String path1 = getString(6);
+			findMiddleFrame(path1);
+			
+			//Generate random shoes:
+			Cursor cursor2 = DB_Operator.queryDB(find+",shoes");
+			int item2 = rand.nextInt()*cursor2.getCount()-1;
+			cursor2.moveToPosition(item2);
+			String path2 = getString(6);
+			findBottomFrame(path2);
+			
 			break;
 		}
 	}
