@@ -17,6 +17,7 @@
         android:icon="@drawable/logotran"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >
+        <data android:mimeType="vnd.android.cursor.dir/vnd.pmp.smsmessage" />
         <activity
             android:name="com.example.pinly.MainActivity"
             android:label="@string/app_name" >
