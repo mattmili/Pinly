@@ -28,6 +28,10 @@
 	    <ScrollView
 	        android:layout_height="fill_parent"
 	        android:layout_width="fill_parent"
+	        android:paddingTop="10dp"
+	        android:paddingRight="10dp"
+	        android:paddingLeft="10dp"
+	        android:paddingBottom="10dp"
 	        android:background="@color/main_high">
 	        
 	        <LinearLayout
@@ -36,6 +40,7 @@
 	            
 	            <TextView
 	                android:id="@+id/faq"
+	                android:textSize="14sp"
 	                android:layout_height="fill_parent"
 	                android:textColor="@color/black"
 	                android:layout_width="fill_parent"/>
@@ -62,6 +67,10 @@
 	    <ScrollView
 	        android:layout_height="fill_parent"
 	        android:layout_width="fill_parent"
+	        android:paddingTop="10dp"
+	        android:paddingRight="10dp"
+	        android:paddingLeft="10dp"
+	        android:paddingBottom="10dp"
 	        android:background="@color/main_high">
 	        
 	        <LinearLayout
@@ -70,6 +79,7 @@
 	            <TextView
 	                android:id="@+id/au"
 	                android:textColor="@color/black"
+	                android:textSize="14sp"
 	                android:layout_height="fill_parent"
 	                android:layout_width="fill_parent"/>
 	        </LinearLayout>
