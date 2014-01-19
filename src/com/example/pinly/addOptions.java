@@ -88,7 +88,7 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
             ".jpg",         /* suffix */
             storageDir      /* directory */
         );
-
+        
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = "file:" + image.getAbsolutePath();
         return image;
@@ -119,12 +119,12 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		hot = "no";
-		cold = "no";
-		mild = "no";
-		snow = "no";
-		sun = "no";
-		rain = "no";
+		hot = "false";
+		cold = "false";
+		mild = "false";
+		snow = "false";
+		sun = "false";
+		rain = "false";
 		switch(v.getId()){
 		
 		case R.id.opB1:
@@ -132,22 +132,22 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
 		   
 			break;
 		case R.id.checkBox1:
-			hot = "yes";
+			hot = "true";
 			break;
 		case R.id.checkBox2:
-			cold = "yes";
+			cold = "true";
 			break;
 		case R.id.checkBox3:
-			mild = "yes";
+			mild = "true";
 			break;
 		case R.id.checkBox4:
-			snow = "yes";
+			snow = "true";
 			break;
 		case R.id.checkBox5:
-			sun = "yes";
+			sun = "true";
 			break;
 		case R.id.checkBox6:
-			rain = "yes";
+			rain = "true";
 			break;
 		
 		}
