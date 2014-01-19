@@ -2,5 +2,6 @@
 <resources>
     <color name="main_back">#8FEAF1</color>
     <color name="main_high">#C7F4F8</color>
+    <color name="black">#000000</color>
     
 </resources>
