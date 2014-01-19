@@ -17,7 +17,7 @@ public class ImagesDB extends SQLiteOpenHelper{
 	public static final String MILD = "Mild";
 	public static final String SNOW = "Snow";
 	public static final String SUN = "Sun";
-	public static final String RAIN = "Waterproof";
+	public static final String RAIN = "Rain";
 	public static final String TYPE = "Type";
 	private static final String DATABASE_NAME="images.db";
 	private static final int DATABASE_VERSION = 1;
