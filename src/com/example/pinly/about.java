@@ -18,7 +18,7 @@ public class about extends Activity {
         TextView about_us = (TextView) findViewById(R.id.au);
         TextView faq = (TextView) findViewById(R.id.faq);
         
-        about_us.setText("MATT, MATT, COLLIN");
+        about_us.setText("\t\t FOR NEXT TIME");
         faq.setText("IT'S AN APP");
     }
 
