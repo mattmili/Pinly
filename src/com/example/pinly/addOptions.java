@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+import com.example.pinly.R;
+
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,14 +14,21 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Intent;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class addOptions extends Activity implements OnClickListener {
+public class addOptions extends Activity implements OnClickListener, OnItemSelectedListener {
 	String hot;
 	String cold;
 	String mild;
@@ -27,6 +36,7 @@ public class addOptions extends Activity implements OnClickListener {
 	String sun;
 	String rain;
 	
+	String type;
 	String fullQ;
 	String imageFileName;
     @Override
@@ -54,6 +64,12 @@ public class addOptions extends Activity implements OnClickListener {
         
         Button op = (Button) findViewById(R.id.opB1);
         op.setOnClickListener(this);
+        
+        Spinner spinner = (Spinner) findViewById(R.id.type_spin);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.types, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
         
         //imageFileName is the name of the file
     }
@@ -136,5 +152,33 @@ public class addOptions extends Activity implements OnClickListener {
 		
 		}
 		fullQ = hot+","+cold+","+mild+","+snow+","+sun+","+","+rain;
+	}
+
+	@Override
+	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
+			long id) {
+		switch((int)id){
+
+		case 0:
+			type = "top";
+
+			break;
+		case 1:
+			type = "bottom";
+			break;
+		case 2:
+			type = "shoes";
+			
+
+			break;
+
+		}
+		
+	}
+
+	@Override
+	public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
