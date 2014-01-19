@@ -9,16 +9,22 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 
+import android.widget.Button;
 import android.widget.ImageView;
 
 
-public class outfits extends Activity {
+public class outfits extends Activity implements OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.outfits_activity);
+        
+        Button randoBut = (Button) findViewById(R.id.random);
+        randoBut.setOnClickListener(this);
 
     }
     
@@ -86,6 +92,18 @@ public class outfits extends Activity {
             Log.e("Error reading file", e.toString());
         }
     }
+
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		switch(arg0.getId()){
+		case R.id.random:
+			//findTopFrame(path0);
+			//findMiddleFrame(path1);
+			//findBottomFrame(path2);
+			break;
+		}
+	}
 
 
 
