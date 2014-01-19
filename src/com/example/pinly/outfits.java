@@ -26,11 +26,14 @@ public class outfits extends Activity implements OnClickListener {
 	String SNOW="False";
 	String RAIN="False";
 	String SUN="False";
+	ImagesDB db;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.outfits_activity);
+        
+        db = new ImagesDB(this);
         
         Button randoBut = (Button) findViewById(R.id.random);
         randoBut.setOnClickListener(this);
@@ -110,21 +113,21 @@ public class outfits extends Activity implements OnClickListener {
 		case R.id.random:
 			Random rand = new Random();
 			//Generate random top:
-			Cursor cursor0 = DB_Operator.queryDB(find+",top");
+			Cursor cursor0 = db.queryDB(find+",top");
 			int item0 = rand.nextInt()*cursor0.getCount()-1;
 			cursor0.moveToPosition(item0);
 			String path0 = getString(6);
 			findTopFrame(path0);
 			
 			//Generate random bottoms:
-			Cursor cursor1 = DB_Operator.queryDB(find+",bottom");
+			Cursor cursor1 = db.queryDB(find+",bottom");
 			int item1 = rand.nextInt()*cursor1.getCount()-1;
 			cursor1.moveToPosition(item1);
 			String path1 = getString(6);
 			findMiddleFrame(path1);
 			
 			//Generate random shoes:
-			Cursor cursor2 = DB_Operator.queryDB(find+",shoes");
+			Cursor cursor2 = db.queryDB(find+",shoes");
 			int item2 = rand.nextInt()*cursor2.getCount()-1;
 			cursor2.moveToPosition(item2);
 			String path2 = getString(6);

@@ -1,6 +1,8 @@
 package com.example.pinly;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -20,12 +22,7 @@ public class ImagesDB extends SQLiteOpenHelper{
 	private static final String DATABASE_NAME="images.db";
 	private static final int DATABASE_VERSION = 1;
 	
-	private static final String DATABASE_CREATE = "create table "
-			+ TABLE_IMAGES + "(" + FILE_NAME
-			+ " text not null, " + HOT + " text not null, " + COLD
-			+ " text not null, " + MILD + " text not null, "
-			+ SNOW + " text not null, " + RAIN + " text not null, "+
-			TYPE + " text not null)";
+	
 	
 	public ImagesDB (Context context){
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -33,15 +30,47 @@ public class ImagesDB extends SQLiteOpenHelper{
 	
 	@Override
 	public void onCreate(SQLiteDatabase database){
+		String DATABASE_CREATE = "CREATE TABLE "
+				+ TABLE_IMAGES + "(" + FILE_NAME
+				+ " TEXT, " + HOT + " TEXT, " + COLD
+				+ " TEXT, " + MILD + " TEXT, "
+				+ SNOW + " TEXT, " + RAIN + " TEXT, "+
+				TYPE + " TEXT)";
 		database.execSQL(DATABASE_CREATE);
 	}
 	
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-		Log.w(ImagesDB.class.getName(),
-			"Upgrading database from version " + oldVersion + " to "
-		            + newVersion + ", which will destroy all old data");
 	    db.execSQL("DROP TABLE IF EXISTS " + TABLE_IMAGES);
 	    onCreate(db);
+	}
+	
+	public void addToDB (String inputStream){
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		String[] parse = inputStream.split(",");
+		
+		ContentValues values = new ContentValues();
+		values.put(ImagesDB.FILE_NAME, parse[6]);
+		values.put(ImagesDB.HOT, parse[0]);
+		values.put(ImagesDB.COLD, parse[1]);
+		values.put(ImagesDB.MILD, parse[2]);
+		values.put(ImagesDB.SNOW, parse[3]);
+		values.put(ImagesDB.SUN, parse[4]);
+		values.put(ImagesDB.RAIN, parse[5]);
+		values.put(ImagesDB.TYPE, parse[7]);
+		db.insert(TABLE_IMAGES, null, values);
+		
+		db.close();	
+	}
+	public Cursor queryDB (String inputStream){
+		SQLiteDatabase db = this.getReadableDatabase();
+		String[] columnNames = {"Hot", "Cold", "Mild", "Rain", "Sun", "Snow"};
+		String[] parse = inputStream.split(",");
+		Cursor cursor = db.query(
+			ImagesDB.TABLE_IMAGES, columnNames,
+			"where Hot=? Cold=? warm=? Waterproof=?",
+			parse,null,null,null);
+		return cursor;
 	}
 }

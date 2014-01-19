@@ -36,6 +36,8 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
 	String sun;
 	String rain;
 	
+	ImagesDB db;
+	
 	String type;
 	String fullQ;
 	String imageFileName;
@@ -43,6 +45,8 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options_activity);
+        
+        db = new ImagesDB(this);
         
         CheckBox cb1 = (CheckBox) findViewById(R.id.checkBox1);
         cb1.setOnClickListener(this);
@@ -89,7 +93,7 @@ public class addOptions extends Activity implements OnClickListener, OnItemSelec
             storageDir      /* directory */
         );
         fullQ = fullQ+","+image.toString();
-        DB_Operator.addToDB(fullQ);
+        db.addToDB(fullQ);
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = "file:" + image.getAbsolutePath();
         return image;
