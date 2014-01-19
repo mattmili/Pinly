@@ -20,12 +20,12 @@ import android.widget.ImageView;
 
 public class outfits extends Activity implements OnClickListener {
 	
-	String HOT;
-	String COLD;
-	String MILD;
-	String SNOW;
-	String RAIN;
-	String SUN;
+	String HOT="True";
+	String COLD="False";
+	String MILD="False";
+	String SNOW="False";
+	String RAIN="False";
+	String SUN="False";
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
