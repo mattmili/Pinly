@@ -37,7 +37,6 @@
         android:id="@+id/random"
 	    android:layout_width="200dp"
 	    android:layout_height="50dp"
-	    android:background="@drawable/snap"
         android:layout_gravity="center"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
